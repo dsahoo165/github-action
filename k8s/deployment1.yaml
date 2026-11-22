@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flask-api
+  template:
+    metadata:
+      labels:
+        app: flask-api
+        template: flask-api
+    spec:
+      containers:
+      - name: flask-api
+        image: jktestacr.azurecr.io/app1/flask-api:4eb3a3a818278da22060514ec8a76369e5d4bf51
+        ports:
+        - containerPort: 5000

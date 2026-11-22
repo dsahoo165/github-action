@@ -1,0 +1,14 @@
+replicaCount: 4
+
+image:
+  repository: deepak.azurecr.io/app1/flask-api
+  tag: 4eb3a3a818278da22060514ec8a76369e5d4bf51
+
+service:
+  port: 80
+  targetPort: 5000
+
+ingress:
+  enabled: true
+  host: deepaksahoo.in
+  argocdHost: argocd.deepaksahoo.in
